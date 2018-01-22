@@ -1,17 +1,17 @@
 'use strict';
 
-const ServiceProvider = require('adonis-fold').ServiceProvider;
+const { ServiceProvider } = require('@adonisjs/fold')
 
 class JsonApiProvider extends ServiceProvider {
 
-  * register() {
+  async register() {
     this.app.bind('AdonisJsonApi/Middleware', (app) => {
-      const JsonApi = require('../src/JsonApiMiddleware');
+      const JsonApi = require('../src/JsonApiMiddleware')
 
-      return new JsonApi(app.use);
-    });
+      return new JsonApi(app.use)
+    })
   }
 
 }
 
-module.exports = JsonApiProvider;
+module.exports = JsonApiProvider

@@ -54,10 +54,9 @@ class JsonApi {
     });
   }
 
-  * handle(request, response, next) {
-    request.jsonApi = new JsonApiRequest(request);
-
-    yield next;
+  async handle(request, response, next) {
+    request.jsonApi = new JsonApiRequest(request)
+    return next
   }
 
 }
