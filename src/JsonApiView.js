@@ -75,7 +75,9 @@ class JsonApiView {
       }
     });
 
-    obj.meta = meta || {};
+    if (meta) {
+      obj.meta = meta || {};
+    }
 
     return obj;
   }
